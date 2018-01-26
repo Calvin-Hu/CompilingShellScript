@@ -1,5 +1,10 @@
 #!/bin/sh
 filename="$1.cpp"
+#Checks if there is one parameter passed in
+if [ $# -ne 1 ]; then
+    echo "One input only, the name of the source file (file.cpp) minus the extension" >&2
+    exit 1
+fi
 #Checks if the file exits in the current directory and is a regular file
 if [ ! -f $filename ]; then
     #prints an message to stderr
